@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <title>Hangman!</title>
+	</head>
+
+<body>
+
+	<header>
+    	<div class="container" id="head-image">
+      		<img src="assets/images/image2.jpg" alt="Looney">
+    	</div>
+  	</header>
+	
+		<div class="container-main">
+			<h3>Bugs Bunny Presents:</h3>
+          	<h1>Hangman</h1>
+          	<h3>The Bugs Bunny and Friends Game</h3>
+    	</div>
+		
+		<div class="container2">
+			<div id="word">Current Word</div>
+			<div id="wins">Correct Guesses</div>
+		     <div id="user-input">User Guesses</div>
+		     <div id="guess-left">Guesses Remaining</div>
+		     <div id="guessed">Already Guessed</div>
+    	</div>
+
+	
+
+    <script>
+//first I need to create the variables & arrays to be used in the game.
+	var words = ['daffy_duck', 'speedy_gonzales', 'yosemite_sam', 'tasmanian_devil', 'foghorn_leghorn', 'pepe_le_pew'];
+
+//not sure if I really need this one
+	var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l","m", "n", "o", "p","q", "r", "t", "u", "v", "w", "x", "y", "z"];
+
+// pick a word from the above array & return it in upper case
+	var pickWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
+
+//Creating the Answer Array to be filled w/ underscores
+  	var answerArray = [];
+    	for (var i = 0; i < pickWord.length; i++) {
+      	answerArray[i] = "_";
+    }
+    
+    var answerString = answerArray.join(" ")
+    document.getElementById("word").innerHTML = answerString;
+
+	var guesses = 0;
+	document.getElementById("guess-left").innerHTML = guesses;
+
+	 var resetLettersGuessed = ""
+
+//creating the onkey event
+	var userText = document.getElementById("user-input")
+		console.log(userText);
+//happens every time u hit a key
+	document.onkeyup = function(event) {
+  		userText.innerText = event.key;
+  	}	
+
+
+/*
+    for (var i = 0; i < pickWord.length; i++) {
+          progressWord.push("__");
+          progressWord.toString()
+          document.getElementById("guess-left").innerHTML = progressWord.join(" ");
+        }
+
+        console.log(progressWord);
+
+
+     for (var i = 0; i < pickWord.length; i++) {
+          mysteryWord.push(currentWord.charAt(i));
+          mysteryWord.toString(i)
+        }
+
+        console.log(mysteryWord)
+ */
+
+
+ /*
+  	if (answerArray === -1) {
+    	wrongInput.push(guess);
+    	console.log(wrongInput);
+  	}
+*/
+
+//create the array of words according to the theme
+//pick a word randomly
+//create underscores based on the length of the word?
+//crete the answer array
+//get the users guess w/ onkey event
+//a loop for the game: while(----- > 0) {
+//check if guess is right & push it to the correct array
+//if wrong, push it to wrong array
+
+    </script>
+
+</body>
+
+</html>
+
+
